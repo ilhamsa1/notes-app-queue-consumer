@@ -14,7 +14,7 @@ const init = async () => {
   await channel.assertQueue('export:notes', {
     durable: true,
   });
-
   channel.consume('export:notes', listener.listen, { noAck: true });
+  console.log('running')
 };
 init();
